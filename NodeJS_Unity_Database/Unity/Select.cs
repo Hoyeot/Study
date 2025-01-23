@@ -6,8 +6,8 @@ using Newtonsoft.Json;
 
 public class Select : MonoBehaviour
 {
-    private string host = "http://localhost:3000/users/getUsers";
-    private int port = 3000;
+    private string host = "IP";
+    private int port = "Port";
 
     public void SelectQry()
     {
@@ -17,16 +17,8 @@ public class Select : MonoBehaviour
     {
         StartCoroutine(PostTest());
     }
-    //void Start()
-    //{
-    //    StartCoroutine(GetTest()); // Get
-    //    //StartCoroutine(PostTest()); // Post
-    //}
-    //void Update()
-    //{
 
-    //}
-    public IEnumerator GetTest() // Get ¹æ½Ä
+    public IEnumerator GetTest() // Get ë°©ì‹
     {
         UnityWebRequest www = UnityWebRequest.Get(host);
         yield return www.SendWebRequest();
@@ -45,10 +37,10 @@ public class Select : MonoBehaviour
         }
     }
 
-    IEnumerator PostTest() // Post ¹æ½Ä
+    IEnumerator PostTest() // Post ë°©ì‹
     {
-        string url = "http://localhost:3000/users/insertUser";
-        WWWForm form = new WWWForm(); // POST Åë½ÅÀ» ÁøÇàÇÒ¶§ Á¤º¸¸¦ ´ã¾Æ¼­ Àü´ŞÇÏ´Â ¹æ½Ä Áß¿¡ ÇÏ³ª
+        string url = "IP (Port)";
+        WWWForm form = new WWWForm(); // POST í†µì‹ ì„ ì§„í–‰í• ë•Œ ì •ë³´ë¥¼ ë‹´ì•„ì„œ ì „ë‹¬í•˜ëŠ” ë°©ì‹ ì¤‘ì— í•˜ë‚˜
         string id = "hoyeon";
         string pw = "qwe123";
         form.AddField("user_id", id);
