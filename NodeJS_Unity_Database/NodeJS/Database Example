@@ -1,0 +1,7 @@
+[MySQL]
+CREATE TABLE user_mst ( user_key INT PRIMARY KEY AUTO_INCREMENT,
+                       user_id VARCHAR(20) NOT NULL,
+                       user_pw VARCHAR(15) NOT NULL,
+                       user_name VARCHAR(10) NOT NULL,
+                       user_memo VARCHAR(100) )
+  ENGINE=INNODB;
