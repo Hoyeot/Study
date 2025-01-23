@@ -8,9 +8,9 @@ using TMPro;
 using static UnityEditor.U2D.ScriptablePacker;
 
 public class Insert : MonoBehaviour
-{// https://m.blog.naver.com/luvtoma/221147882754
-    private string host = "http://localhost:3000/users/getUsers";
-    private int port = 3000;
+{
+    private string host = "IP";
+    private int port = Port;
 
     public TMP_InputField idInput;
     public TMP_InputField pwInput;
@@ -44,7 +44,7 @@ public class Insert : MonoBehaviour
         form.AddField("user_name", nameInput.text);
         form.AddField("user_nickname", nicknameInput.text);
         Debug.Log($"ID: {idInput.text}, PW: {pwInput.text}, Name: {nameInput.text}, Nickname: {nicknameInput.text}");
-        UnityWebRequest www = UnityWebRequest.Post("http://localhost:3000/users/insertUser", form);
+        UnityWebRequest www = UnityWebRequest.Post("IP", form);
 
         yield return www.Send();
 
