@@ -1,0 +1,7 @@
+C:\Users\Hoyeon\source\repos\CSServer\CShartServer\CsServerAsync\bin\Debug\CsServerAsync.exe.config
+C:\Users\Hoyeon\source\repos\CSServer\CShartServer\CsServerAsync\bin\Debug\CsServerAsync.exe
+C:\Users\Hoyeon\source\repos\CSServer\CShartServer\CsServerAsync\bin\Debug\CsServerAsync.pdb
+C:\Users\Hoyeon\source\repos\CSServer\CShartServer\CsServerAsync\obj\Debug\CsServerAsync.csproj.AssemblyReference.cache
+C:\Users\Hoyeon\source\repos\CSServer\CShartServer\CsServerAsync\obj\Debug\CsServerAsync.csproj.CoreCompileInputs.cache
+C:\Users\Hoyeon\source\repos\CSServer\CShartServer\CsServerAsync\obj\Debug\CsServerAsync.exe
+C:\Users\Hoyeon\source\repos\CSServer\CShartServer\CsServerAsync\obj\Debug\CsServerAsync.pdb
