@@ -29,7 +29,7 @@ public class Client : MonoBehaviour
         inputMessage.onSubmit.AddListener(ononSubmitInputMessage);
     }
 
-    void ononSubmitInputMessage(string input) // Enter Àü¼Û
+    void ononSubmitInputMessage(string input) // Enter ìž…ë ¥ ì‹œ ì „ì†¡
     {
         OnClickSendButton();
         inputMessage.text = null;
