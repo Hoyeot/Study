@@ -1,5 +1,5 @@
 # 2DGame
-C++ - IOCP 서버
+C++ - IOCP 서버\n
 유니티 - 클라이언트
 데이터베이스 - MySQL(유저정보)
 NodeJS - WebRequest를 이용한 데이터베이스와 유니티 통신
