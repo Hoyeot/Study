@@ -1,13 +1,13 @@
 # 2DGame
 C++ - IOCP 서버<br/>
 유니티 - 클라이언트<br/>
-데이터베이스 - MySQL(유저정보)
+데이터베이스 - MySQL(유저정보)<br/>
 NodeJS - WebRequest를 이용한 데이터베이스와 유니티 통신
 
 # 3DGame
-C# - IOCP 서버
-유니티 - 클라이언트
-데이터베이스 - MongoDB(유저정보, 유저랭크)
+C# - IOCP 서버<br/>
+유니티 - 클라이언트<br/>
+데이터베이스 - MongoDB(유저정보, 유저랭크)<br/>
 Spring Boot - WebRequest를 이용한 데이터베이스와 유니티 통신
 
 # IOCP
