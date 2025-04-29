@@ -74,33 +74,6 @@ public class PlayerMgr : Singleton<PlayerMgr>
         }
     }
 
-    //public IEnumerator SendPositionUpdate()
-    //{
-    //    WaitForSeconds delay = new WaitForSeconds(_positionUpdateInterval);
-    //    Vector3 _lastPos = Vector3.zero;
-    //    Vector3 _lastRot = Vector3.zero;
-
-    //    while (NetworkMgr.Instance.IsConnected)
-    //    {
-    //        // ¿Ãµø, »∏¿¸ º≠πˆ∆–≈∂ ¿¸º€ √÷º“»≠
-    //        if (_localPlayer != null && !UIMgr.Instance.IsMenuOpen &&
-    //            (Vector3.Distance(_lastPos, _localPlayer.transform.position) > 0.01f || Vector3.Distance(_lastRot, _localPlayer.transform.rotation.eulerAngles) > 0.5f))
-    //        {
-    //            string msg = $"{Define.Move}|" +
-    //                $"{GameMgr.Instance.PlayerId}|" +
-    //                $"{_localPlayer.transform.position.x.ToString("F2")}|" +
-    //                $"{_localPlayer.transform.position.y.ToString("F2")}|" +
-    //                $"{_localPlayer.transform.position.z.ToString("F2")}|" +
-    //                $"{_localPlayer.transform.rotation.eulerAngles.x.ToString("F2")}|" +
-    //                $"{_localPlayer.transform.rotation.eulerAngles.y.ToString("F2")}|" +
-    //                $"{_localPlayer.transform.rotation.eulerAngles.z.ToString("F2")}\n";
-    //            NetworkMgr.Instance.SendToServer(msg);
-    //            _lastPos = _localPlayer.transform.position;
-    //            _lastRot = _localPlayer.transform.rotation.eulerAngles;
-    //        }
-    //        yield return delay;
-    //    }
-    //}
     public IEnumerator SendPositionUpdate()
     {
         WaitForSeconds delay = new WaitForSeconds(_positionUpdateInterval);
@@ -111,7 +84,7 @@ public class PlayerMgr : Singleton<PlayerMgr>
 
         while (NetworkMgr.Instance.IsConnected)
         {
-            // ¿Ãµø, »∏¿¸ º≠πˆ∆–≈∂ ¿¸º€ √÷º“»≠
+            // Ïù¥Îèô, ÌöåÏ†Ñ ÏÑúÎ≤ÑÌå®ÌÇ∑ Ï†ÑÏÜ° ÏµúÏÜåÌôî
             if (_localPlayer != null && !UIMgr.Instance.IsMenuOpen && (Vector3.Distance(_lastPos, _localPlayer.transform.position) > 0.01f || Vector3.Distance(_lastRot, _localPlayer.transform.rotation.eulerAngles) > 0.5f))
             {
                 PlayerCtrl playerCtrl = _localPlayer.GetComponent<PlayerCtrl>();
@@ -149,17 +122,6 @@ public class PlayerMgr : Singleton<PlayerMgr>
         }
     }
 
-    //public void UpdatePlayerPosition(string playerId, Vector3 pos, Vector3 rot)
-    //{
-    //    if (_players.TryGetValue(playerId, out GameObject player))
-    //    {
-    //        NetworkPlayer np = player.GetComponent<NetworkPlayer>();
-    //        if (np != null)
-    //        {
-    //            np.UpdateTransform(pos, rot);
-    //        }
-    //    }
-    //}
     public void UpdatePlayerPosition(string playerId, Vector3 pos, Vector3 rot, float speed, bool isGround)
     {
         if (_players.TryGetValue(playerId, out GameObject player))
@@ -167,7 +129,7 @@ public class PlayerMgr : Singleton<PlayerMgr>
             NetworkPlayer np = player.GetComponent<NetworkPlayer>();
             if (np != null)
             {
-                // ¡°«¡ ∆Æ∏Æ∞≈¥¬ ∫∞µµ∑Œ √≥∏Æ«ÿæﬂ «‘ (º≠πˆø°º≠ ∆Ø¡§ ∆–≈∂¿∏∑Œ ∫∏≥ªæﬂ «‘)
+                // Ï†êÌîÑ Ìä∏Î¶¨Í±∞Îäî Î≥ÑÎèÑÎ°ú Ï≤òÎ¶¨Ìï¥Ïïº Ìï® (ÏÑúÎ≤ÑÏóêÏÑú ÌäπÏ†ï Ìå®ÌÇ∑ÏúºÎ°ú Î≥¥ÎÇ¥Ïïº Ìï®)
                 np.UpdateTransform(pos, rot, speed, isGround, false);
             }
         }
