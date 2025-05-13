@@ -8,42 +8,18 @@ using namespace std;
 class Player
 {
 public:
-    Player(SOCKET socket, const char* id, float currentHp, float x, float y)
-        : socket(socket), id(id), x(x), y(y), currentHp(currentHp) {}
+    Player(SOCKET socket, const char* id, float currentHp, float x, float y);
     ~Player();
 
-    SOCKET GetSocket() const { return socket; }
-
-    void SetPosition(float x, float y)
-    {
-        this->x = x;
-        this->y = y;
-    }
-
-    float GetHp()
-    {
-        return currentHp;
-    }
-
-    float GetX()
-    {
-        return x;
-    }
-
-    float GetY()
-    {
-        return y;
-    }
-
-    const char* GetId()
-    {
-        return id;
-    }
-
-    //void Clear();
+    SOCKET GetSocket() const;
+    void SetPosition(float x, float y);
+    float GetHp();
+    float GetX();
+    float GetY();
+    const char* GetId();
 
 private:
-    SOCKET socket; // ¼ÒÄÏ Á¤º¸ ÀúÀå
+    SOCKET socket; // ì†Œì¼“ ì •ë³´ ì €ìž¥
     const char* id;
     float currentHp;
     float x, y;
