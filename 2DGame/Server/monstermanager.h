@@ -12,96 +12,23 @@ using namespace std;
 class MonsterManager
 {
 public:
-	MonsterManager() : maxMonsters(MAX_MONSTER) {}
+	MonsterManager();
 
-	bool CreateMonster(int id, float x, float y)
-	{
-		if (monsters.size() >= maxMonsters)
-		{
-			return false;
-		}
-
-		Monster* monster = new Monster(id, 50, "IDLE", x, y);
-		monsters[id] = monster;
-		return true;
-	}
-
-	bool MonsterChk() const
-	{
-		return monsters.empty() && !deadMonsters.empty();
-	}
-
-	void CreateBossMonster(int id, float x, float y)
-	{
-		Monster* boss = new Monster(id, 250, "IDLE", x, y);
-		monsters[id] = boss;
-	}
-
-	void MoveMonster(int id, float x, float y)
-	{
-		if (monsters.find(id) != monsters.end())
-		{
-			monsters[id]->SetPosition(x, y);
-		}
-	}
-
-	bool DamageMonster(int id, float damage)
-	{
-		if (monsters.find(id) != monsters.end())
-		{
-			monsters[id]->TakeDamage(damage);
-			if (monsters[id]->IsDead())
-			{
-				DeleteMonster(id);
-				return true;
-			}
-		}
-		return false;
-	}
-
-	void DeleteMonster(int id)
-	{
-		if (monsters.find(id) != monsters.end())
-		{
-			delete monsters[id];
-			monsters.erase(id);
-			deadMonsters.push_back(id);
-		}
-	}
-
-	Monster* GetMonster(int id)
-	{
-		if (monsters.find(id) != monsters.end())
-		{
-			return monsters[id];
-		}
-		return nullptr;
-	}
-
-	unordered_map<int, Monster*>& GetMonsters()
-	{
-		return monsters;
-	}
-
-	const vector<int>& GetDeadMonsters() const
-	{
-		return deadMonsters;
-	}
-
-	void ResurrectMonsters()
-	{
-		for (int id : deadMonsters)
-		{
-			float x = static_cast<float>(rand() % 10);
-			CreateMonster(id, x, 0.5f);
-		}
-		deadMonsters.clear(); // Á×Àº ¸ó½ºÅÍ ¸ñ·Ï ÃÊ±âÈ­
-	}
+	bool CreateMonster(int id, float x, float y);
+	bool MonsterChk() const;
+	void CreateBossMonster(int id, float x, float y);
+	void MoveMonster(int id, float x, float y);
+	bool DamageMonster(int id, float damage);
+	void DeleteMonster(int id);
+	Monster* GetMonster(int id);
+	unordered_map<int, Monster*>& GetMonsters();
+	const vector<int>& GetDeadMonsters() const;
+	void ResurrectMonsters();
 
 private:
-	unordered_map<int, Monster*> monsters; // ¸ó½ºÅÍ ÀúÀå
-	vector<int> deadMonsters; // ¸ó½ºÅÍ ÀúÀå
-	const int maxMonsters; // ÃÖ´ë ¼ö
+	unordered_map<int, Monster*> monsters; // ëª¬ìŠ¤í„° ì €ì¥
+	vector<int> deadMonsters; // ëª¬ìŠ¤í„° ì €ì¥
+	const int maxMonsters; // ìµœëŒ€ ìˆ˜
 };
 
 #endif
