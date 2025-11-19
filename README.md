@@ -5,13 +5,14 @@ C++ - IOCP 서버<br/>
 NodeJS - WebRequest를 이용한 데이터베이스와 유니티 통신
 
 # 3DGame
-1. C# - TCP 서버(비동기)<br/>
-  유니티 - 클라이언트<br/>
-  데이터베이스 - MongoDB(유저정보, 유저랭크)<br/>
-  백앤드 - Spring boot를 이용한 데이터베이스와 유니티 통신
+C# - TCP 서버(비동기)<br/>
+유니티 - 클라이언트<br/>
+데이터베이스 - MongoDB(유저정보, 유저랭크)<br/>
+백앤드 - Spring boot를 이용한 데이터베이스와 유니티 통신
 
-2. C# - 3D 수박게임<br/>
-  유니티 - 클라이언트<br/>
+# Suika3D
+C# - 3D 수박게임<br/>
+유니티 - 클라이언트<br/>
 
 # IOCP
 C++, C#을 이용한 Echo 채팅서버, 클라이언트 구현
